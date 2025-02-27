@@ -1,8 +1,8 @@
 import re
 from re import findall
 
-alumnos = r'([a-z])\.([a-z]{2,})\.(\d{4})@alumnos\.urjc\.es'
-profesores = r'([a-z]+)\.([a-z]{2,})@urjc\.es'
+alumnos = r'\b([a-z])\.([a-z]{2,})\.(\d{4})@alumnos\.urjc\.es\b'
+profesores = r'\b([a-z]{2,})\.([a-z]{2,})@urjc\.es\b'
 texto = input()
 
 matchAlumnos = re.search(alumnos,texto)
