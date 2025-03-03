@@ -4,7 +4,7 @@ texto = input()
 
 
 
-expresion = r'(?:\d{4}-\d{2}-\d{2})\s(?:\d{2}:\d{2}:\d{2}\.\d{3})\s+(\bINFO\b|\bERROR\b|\bDEBUG\b|\bWARN\b)\s+\d+\s+---\s+\[([\w\d]+)]\s+(?:(?:\w+\.)+)?(\S+)\s+:\s+(.*)'
+expresion = r'(?:\d{4}-\d{2}-\d{2})\s(?:\d{2}:\d{2}:\d{2}\.\d{3})\s+(\b(?:INFO|ERROR|DEBUG|WARN)\b)\s+\d+\s+---\s+\[([\w\d]+)]\s+(?:(?:\w+\.)+)?(\S+)\s+:\s+(.*)'
 
 
 salida = re.findall(expresion, texto)
