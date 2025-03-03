@@ -9,6 +9,5 @@ expresion = r'(?:\d{4}-\d{2}-\d{2})\s(?:\d{2}:\d{2}:\d{2}\.\d{3})\s+(\b(?:INFO|E
 
 salida = re.findall(expresion, texto)
 
-
 for level,thread,class_name,message in salida:
     print(f'"{level}","{thread}","{class_name}","{message}"')
