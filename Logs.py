@@ -1,9 +1,14 @@
 import re
-from re import findall
 
 texto = input()
 
-expresion = r'(?:\S+)\s+(\bINFO\b|\bERROR\b|\bDEBUG\b|\bWARN\b)\s+\d+\s+---\s+\[([\w\d]+)]\s+(?:(?:\w+\.)+)?(\S+)\s+:\s+(.*)'
+
+
+expresion = r'(?:\d{4}-\d{2}-\d{2})\s(?:\d{2}:\d{2}:\d{2}\.\d{3})\s+(\bINFO\b|\bERROR\b|\bDEBUG\b|\bWARN\b)\s+\d+\s+---\s+\[([\w\d]+)]\s+(?:(?:\w+\.)+)?(\S+)\s+:\s+(.*)'
+
+
 salida = re.findall(expresion, texto)
+
+
 for level,thread,class_name,message in salida:
     print(f'"{level}","{thread}","{class_name}","{message}"')
